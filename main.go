@@ -1,12 +1,16 @@
 package main
 
-import "github.com/idazanggara/go-api-with-gin/routes"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/idazanggara/go-api-with-gin/routes"
+)
 
 func main() {
+	routerEngine := gin.Default()
 
-	// routes.StartServer() == routerEngine
+	routes.StartServer(routerEngine)
 
-	if err := routes.StartServer().Run(); err != nil {
+	if err := routerEngine.Run(); err != nil {
 		panic(err)
 	}
 	// secara default menggunakan port :8080

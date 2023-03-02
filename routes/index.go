@@ -7,8 +7,7 @@ import (
 	"github.com/idazanggara/go-api-with-gin/controller"
 )
 
-func StartServer() *gin.Engine {
-	routerEngine := gin.Default()
+func StartServer(routerEngine *gin.Engine) *gin.Engine {
 
 	routerEngine.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "Healthy Check")
