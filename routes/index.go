@@ -15,8 +15,9 @@ func StartServer() *gin.Engine {
 	})
 	// group routing
 	// group login
-	rgAuth := routerEngine.Group("/auth")
-	rgAuth.POST("/login", controller.Login)
+	ServerAuth(routerEngine)
+	// rgAuth := routerEngine.Group("/auth")
+	// rgAuth.POST("/login", controller.Login)
 
 	// group cars
 	rgMaster := routerEngine.Group("/master")
